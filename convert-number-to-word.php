@@ -1,6 +1,6 @@
-<?php
+
  
-function convertToIndianCurrency($number) {
+$number=3254723547237462374623;
     $no = round($number);
     $decimal = round($number - ($no = floor($number)), 2) * 100;    
     $digits_length = strlen($no);    
@@ -52,7 +52,5 @@ function convertToIndianCurrency($number) {
      $rupees = implode(' ', array_reverse($str));
 //    pr($decimal);
     $paise = ($decimal) ? "and " . ($words[$decimal - $decimal % 10]) . " " . ($words[$decimal % 10]) . " Paisa" : '';
-    return ($rupees ? 'rupees ' . $rupees : '') . $paise . " only";
-}
- 
-echo "56721351.61 = " . convertToIndianCurrency(56721351.61);
+    echo  ($rupees ? 'rupees ' . $rupees : '') . $paise . " only";
+
